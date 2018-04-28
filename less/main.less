@@ -158,6 +158,10 @@
 		padding: 20px 40px;
 		color: #ffffff;
 		border-radius: 5px;
+		cursor: pointer;
+		&:hover {
+			    background-color: #0444B4;
+		}
 	}
 }
 .paralax_prod_wrapp {
@@ -409,6 +413,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 	li {
+		
+		text-align: center;
 		a {
 			font-weight: 700;
 			font-size: 12px;
@@ -417,6 +423,10 @@
 			display: inline-block;
 			padding-top: 25px;
 			padding-bottom: 25px;
+			&:hover {
+				color: @gc2;
+			}
+
 		}
 		span {
 			color: @gc2;
@@ -428,6 +438,7 @@
 			padding-bottom: 25px;
 		}
 	}
+	
 }
 .card_main_product {
 
@@ -605,6 +616,42 @@
 	position: relative;
 	input {
 		text-transform: none;
+		
+	}
+	input:hover {
+	+ label.phone {
+			display: none;
+	}
+	}
+	input.valid:hover {
+	+ label.phone {
+			display: block;
+	}
+	}
+		
+	span.error {
+		color: red;
+		font-size: 10px;
+		position: absolute;
+		top: 44px;
+		left: 0;
+		display: inline-block;
+		background-color: #efefef;
+		padding: 5px;
+		border-radius: 5px;
+		z-index: 3;
+		&:after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 12px solid  #efefef;
+			position: absolute;
+			top: -11px;
+			left: 50%;
+
+		}
 	}
 		input, select {
 		&:focus{
@@ -616,16 +663,55 @@
     }
 		}
 	
-		select, input {
+		/*select, input {
 			&:valid{
       
       + label {
         display: none;
       }
     }
+		}*/
+
+	input.error {
+      + label {
+        display: none;
+      }
+		}
+
+/* label.phone {
+		&:hover {
+			display: none;
+		}
+	}*/
+	
+		input.valid {
+			padding-left: 15px;
+			 + label {
+			 	height: 25px;
+			 	strong, span {
+        display: none;
+      }
+      }
+      + label.mail {
+			 	background: url(../images/css_sprites.png) -15px -58px no-repeat, 
+	url(../images/success.png) right center no-repeat;
+			 
+      }
+       + label.user {
+			 	background: url(../images/css_sprites.png) -15px -246px no-repeat, 
+	url(../images/success.png) right center no-repeat;
+			 
+      }
+      + label.phone {
+			 	background: url(../images/css_sprites.png) -15px -104px no-repeat, 
+	url(../images/success.png) right center no-repeat;
+			 
+      }
+
 		}
 
 		 label {
+		
     position: absolute;
     left: 20px;
     top: 10px;
@@ -642,6 +728,15 @@
     }
   }
 	}
+.form_field_top input.valid {
+	padding-left: 30px;
+}
+.form_field_top input[name="town"].valid {
+	padding-left: 10px;
+}
+.form_field_top input[name="town"] + label {
+	padding-left: 0;
+}
 .form-group_checkbox {
 	list-style: none;
 	margin: 0;
@@ -801,7 +896,7 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
 .form_field_top, .form_main_short_form_wrapp2 {
 	position: relative;
 	padding-top: 30px;
-	.error {
+	> .error {
 		display: inline-block;
     position: absolute;
     top: 0;
@@ -811,7 +906,7 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
     left: 0;
 
 	}
-	input {
+	input, textarea {
 		width: 350px;
 		height: 40px;
 		padding: 0 10px;
@@ -820,6 +915,10 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
 			margin-bottom: 10px;
 		}
 	}
+	textarea {
+			padding-top: 10px;
+			height: 85px;
+		}
 }
 .form_main_short_form_wrapp2 {
 	padding-top: 0;
@@ -827,8 +926,12 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
 	label {
 		text-transform: none;
 		left: 10px;
+		top: 15px;
 			color: #818181;
 			text-align: left;
+		strong {
+			font-weight: 400;
+		}
 	}
 }
 .placeholder_popup {
@@ -858,7 +961,7 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
 			display: none;
 		}
 		em {
-			display: block;
+			display: none;
 		}
 	}
 	.user {
@@ -1132,8 +1235,8 @@ input[type=checkbox].css-checkbox:checked + label, input[type=radio].css-checkbo
 		}
 		.form_main_short_form_wrapp2 label {
 			overflow: hidden;
-			height: 20px;
-			font-size: 12px;
+			/*height: 20px;
+			font-size: 14px;*/
 		}
 		.placeholder_popup .user.active {
 			width: 95%;

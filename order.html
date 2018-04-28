@@ -276,16 +276,32 @@
 			<legend>Заполните форму</legend>
 			<div class="form_field_top">
 				<span class="error">Ошибка в  имени, телефоне или электронной почты *</span>
+
 				<div class="placeholder placeholder_popup">
-					<input type="text" required>
-					<label class="user active"> <strong>Имя</strong> <span class="red">*</span>  <em>Заполнено</em></label>
+            <span for="name" generated="true" class="error">Поддерживаются только кириллические символы, тире и пробелы</span>
+            <input type="text" name="name" value="" size="0" required="" minlength="1" title="Заполните поле ФИО">
+            <label class="user">
+              <strong>ФИО</strong>
+              <span class="red">*</span>
+              <em>Заполнено</em>
+            </label>
+          </div>
+          
+
+				<div class="placeholder placeholder_popup">
+					 <span for="name" generated="true" class="error">Проверьте правильность телефона. Введите в форму 10 цифр Вашего номера</span>
+					<input type="text" class="error" >
+					<label class="user"> <strong>Имя</strong> <span class="red">*</span>  <em>Заполнено</em></label>
 				</div>
 				<div class="placeholder placeholder_popup">
-					<input type="text" required>
+					<input  type="text" class="valid">
 					<label class="mail"><strong> E-mail</strong> <span class="red">*</span> <em>Заполнено</em></label>
 				</div>
 				<div class="placeholder placeholder_popup">
-					<input type="text" required>
+					<textarea  placeholder="Ваше сообщение"></textarea>
+				</div>
+				<div class="placeholder placeholder_popup">
+					<input type="text" class="valid">
 					<label class="phone"><strong> Телефон</strong> <span class="red">*</span> <em>Заполнено</em></label>
 				</div>
 			</div>
@@ -301,8 +317,7 @@
 				 <label>Город </label>
 				</div>
 				<div class="placeholder">
-					<input type="text" required>
-				 <label>Название компании </label>
+					<input type="text" placeholder="Название компании">
 				</div>
 			<div class="placeholder">
 					<input type="text" required>
