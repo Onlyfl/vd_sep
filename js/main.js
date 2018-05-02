@@ -14,7 +14,7 @@
 
     });
 	
-	$(document).on('click','.product_drawing_img_wrapp img', function() {
+	$(document).on('click','.product_drawing_img_wrapp img, .flex-active-slide img', function() {
 
         $('#popup_img').fadeIn('slow');
 		var img_popup = $(this).attr('src');
